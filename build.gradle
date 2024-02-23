@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.8.1'
+    id("com.github.johnrengelman.shadow") version "7.1.0"
 
 }
 
@@ -22,6 +23,13 @@ allure {
 
 configurations {
     testCompile
+    jar {
+        manifest {
+            attributes(
+                    'Main-Class': 'FinalWork_Tests'
+            )
+        }
+    }
 }
 
 dependencies {
@@ -30,6 +38,7 @@ dependencies {
     implementation 'junit:junit:4.13.1'
     testImplementation 'com.codeborne:selenide:6.17.2'
     testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.11'
+
 
     testImplementation 'io.qameta.allure:allure-selenide:2.25.0'
     testImplementation 'io.qameta.allure:allure-junit5:2.25.0'
@@ -48,4 +57,9 @@ test {
     systemProperty 'allure.link.issue.pattern', 'https://rdm.lwo.by/{}'
     systemProperty 'allure.link.tms.pattern', 'https://rdm.lwo.by/browse/{}'
 
+}
+
+jar {
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
 }

@@ -23,7 +23,7 @@ import static com.codeborne.selenide.Selenide.*;
 @Story("Разделение тестов на основной: (тест 1) и 2 фичи (тесты 2 и 3)")
 @DisplayName("Тест заказа пиццы, регистрация пользователя, проверки введенной информации + тест 2-х фич")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class FinalWork_Tests {
+public class FinalWorkTests {
 
     @BeforeAll
     @DisplayName("Инициализируем плагин Allure-Selenide")
