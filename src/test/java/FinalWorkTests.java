@@ -29,7 +29,7 @@ public class FinalWorkTests {
     @DisplayName("Инициализируем плагин Allure-Selenide")
     static void init(){
         SelenideLogger.addListener("allure", new AllureSelenide());
-        //подключение сервера Selenoid для запуска тестов на удаленном компьютере
+        //подключение сервера Selenoid для запуска тестов на удаленном компьютере. Для запуска локально - необходимо закомментить строки 33-35
         Configuration.remote="http://85.119.145.3:4444/wd/hub";
         Configuration.browser="firefox";
         Configuration.browserVersion="93.0";
